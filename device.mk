@@ -12,17 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
-# Device path
 DEVICE_PATH := device/motorola/milanf/rootdir
-
-DEVICE_PACKAGE_OVERLAYS += \
-    device/motorola/milanf/overlay
-
-# Kernel
-PRODUCT_COPY_FILES += \
-    device/motorola/milanf-kernel/Image:kernel
 
 # Audio Configuration
 PRODUCT_COPY_FILES += \
@@ -30,6 +20,16 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/vendor/etc/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(DEVICE_PATH)/vendor/etc/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml
 
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Device Init
+PRODUCT_PACKAGES += \
+    fstab.milanf \
+    vendor-fstab.milanf \
+    init.recovery.qcom.rc
+
+# Display
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
@@ -42,12 +42,14 @@ PRODUCT_PACKAGES += \
     milanfFrameworkOverlay \
     milanfSystemUIOverlay
 
+DEVICE_PACKAGE_OVERLAYS += \
+    device/motorola/milanf/overlay
+
 # Fingerprint
 TARGET_USES_EGISTEC_FINGERPRINT := true
 TARGET_USES_SILEAD_FINGERPRINT := true
 
-# Inherit from those products. Most specific first.
+# Inherits / Includes
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 $(call inherit-product, device/motorola/sm4350-common/platform.mk)
-
-# include board vendor blobs
 $(call inherit-product-if-exists, vendor/motorola/milanf/milanf-vendor.mk)
