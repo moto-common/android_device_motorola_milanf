@@ -17,8 +17,12 @@ $(call inherit-product, device/motorola/milanf/device.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+# Inherit Some Common Rom Specific stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
 PRODUCT_NAME := aosp_milanf
 PRODUCT_DEVICE := milanf
-PRODUCT_MODEL := Moto G Stylus 5G (AOSP)
-PRODUCT_BRAND := motorola
-PRODUCT_MANUFACTURER := motorola
+PRODUCT_MODEL := XT2215
+PRODUCT_BRAND := Moto G
+PRODUCT_MANUFACTURER := Motorola
+PRODUCT_RELEASE_NAME := Moto G Sylus 5G 2022
