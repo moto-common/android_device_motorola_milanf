@@ -22,6 +22,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=420
 
+# Adaptive Brightness Default Disable
+PRODUCT_PACKAGES += milanfSettingsProviderOverlay
+
 # Brightness
 SOONG_CONFIG_qtidisplay_brightness := true
 
@@ -36,7 +39,7 @@ TARGET_USES_EGISTEC_FINGERPRINT := true
 TARGET_USES_SILEAD_FINGERPRINT := true
 
 # Model
-PRODUCT_MODEL := moto g stylus 5g 2022
+PRODUCT_MODEL := Moto G Stylus 5G 2022
 
 # Modules
 BOOT_KERNEL_MODULES := \
