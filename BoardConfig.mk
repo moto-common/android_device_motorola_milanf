@@ -56,7 +56,6 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := \
     wcd9xxx_dlkm.ko \
     wcd_core_dlkm.ko \
     wl2866d.ko \
-    wlan.ko \
     wsa881x_analog_dlkm.ko \
     rt_pd_manager.ko
 
