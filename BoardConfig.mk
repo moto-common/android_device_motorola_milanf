@@ -39,7 +39,7 @@ BOARD_VENDOR_KERNEL_MODULES_LOAD := \
     q6_dlkm.ko \
     q6_notifier_dlkm.ko \
     q6_pdr_dlkm.ko \
-    qca_cld3_wlan.ko \
+    wlan.ko \
     rbs_fps_mmi.ko \
     rx_macro_dlkm.ko \
     silead_fps_mmi.ko \

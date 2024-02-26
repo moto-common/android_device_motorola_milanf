@@ -19,7 +19,7 @@ platform_dlkm.ko
 q6_dlkm.ko
 q6_notifier_dlkm.ko
 q6_pdr_dlkm.ko
-qca_cld3_wlan.ko
+wlan.ko
 rbs_fps_mmi.ko
 rt_pd_manager.ko
 rx_macro_dlkm.ko
